@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weight Conventer</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top:70px;
+            background:#333;
+            color:#fff;            
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><!-- .container in emmit -->
+        <div class="row">
+            <div class="col-md-6">
+              <h1 class="display-4 text-center">Conversion Center</h1>
+              <form >
+                  <div class="form-group">
+                      <input type="number"
+                      id="input"
+                      class="form-control form-control-lg" 
+                      placeholder="Enter Pounds...">
+                  </div>
+              </form>
+              
+              <div id="output">
+                  <div class="card bg-primary mb-2"><!-- mb- means margin bottom in bootstrap -->
+                    <div class="card-block">
+                          <h4>Grams :</h4>
+                          <div id="gramsOut"></div>
+                       </div>
+            </div>
+
+              <div class="card bg-secondary mb-2">
+              <div class="card-block">
+                <h4>Kilograms :</h4>
+                <div id="kilogramsOut"></div>
+                </div>
+                </div>
+                
+            <div class="card bg-danger mb-2">
+            <div class="card-block">
+            <h4>Onunces :</h4>
+            <div id="ouncesOut">
+            </div>
+              </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       document.getElementById('input').addEventListener('input',function(e){
+           let pounds = e.target.value;
+           console.log(pounds)
+           document.getElementById('gramsOut').innerHTML = pounds/0.0022046;
+           document.getElementById('kilogramsOut').innerHTML = pounds/2.2046;
+           document.getElementById('ouncesOut').innerHTML = pounds*16;
+       })
+    </script>
+</body>
+</html>
